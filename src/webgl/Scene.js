@@ -205,7 +205,7 @@ class SCENE {
 
       case 4 :
         this.selectedObject = this.cover;
-        this.camera.position.z = 5;
+        this.camera.position.z = 100;
         this.bloomPass.strength = 0;
         break;
     
