@@ -13,6 +13,7 @@ import LogoIUT from "./objects/LogoIUT";
 
 import pane from "../utils/Pane";
 import Board from "./objects/Board";
+import Cover from "./objects/Cover";
 
 class SCENE {
   setup(canvas) {
@@ -27,6 +28,7 @@ class SCENE {
     this.setupRenderer();
     this.setupPostProcessing();
     this.setupGLTFLoader();
+    this.setupTextureLoader();
 
     this.addObjects();
     this.addEvents();
@@ -34,6 +36,11 @@ class SCENE {
 
   setupGLTFLoader() {
     this.gltfLoader = new GLTFLoader()
+  }
+
+  
+  setupTextureLoader() {
+    this.textureLoader = new THREE.TextureLoader()
   }
 
   setupScene() {
@@ -156,6 +163,7 @@ class SCENE {
     this.line = new Line();
     this.logoIUT = new LogoIUT()
     this.board = new Board()
+    this.cover = new Cover()
 
     // this.scene.add(this.line.group);
 
@@ -193,6 +201,12 @@ class SCENE {
         this.selectedObject = this.board;
         this.camera.position.z = 100;
         this.bloomPass.strength = 0.35;
+        break;
+
+      case 4 :
+        this.selectedObject = this.cover;
+        this.camera.position.z = 5;
+        this.bloomPass.strength = 0;
         break;
     
       default:
