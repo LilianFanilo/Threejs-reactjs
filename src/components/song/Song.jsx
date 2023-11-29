@@ -3,7 +3,7 @@ import AudioController from '../../utils/AudioController';
 import Scene from '../../webgl/Scene';
 
 const Song = ({data}) => {
-    console.log(data);
+    // console.log(data);
 
     const pickSong = () => {
         AudioController.updateSong(data.preview);

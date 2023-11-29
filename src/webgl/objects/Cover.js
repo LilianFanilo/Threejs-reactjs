@@ -43,10 +43,10 @@ export default class Cover {
   }
 
   updateCover(src){
-    console.log(src);
+    // console.log(src);
 
     Scene.textureLoader.load(src, (texture) => {
-        console.log(texture);
+        // console.log(texture);
         // this.material.map = texture;
         this.material.uniforms.uMap.value = texture;
         this.material.needsUpdate = true

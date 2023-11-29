@@ -54,7 +54,7 @@ const Search = () => {
         setArtist("")
     };
 
-    console.log(isDragActive);
+    // console.log(isDragActive);
 
     return (
         <div className={s.searchContainer}>

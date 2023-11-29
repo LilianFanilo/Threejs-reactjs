@@ -113,7 +113,7 @@ class SCENE {
       max: 5,
       step: 0.01,
     }).on('change', (e) => {
-      console.log(e.value)
+      // console.log(e.value)
       this.bloomPass.strength = e.value;
     })
 
@@ -123,7 +123,7 @@ class SCENE {
       max: 10,
       step: 0.01,
     }).on('change', (e) => {
-      console.log(e.value)
+      // console.log(e.value)
       this.bloomPass.radius = e.value;
     })
 
@@ -133,7 +133,7 @@ class SCENE {
       max: 1,
       step: 0.1,
     }).on('change', (e) => {
-      console.log(e.value)
+      // console.log(e.value)
       this.bloomPass.threshold = e.value;
     })
   }
