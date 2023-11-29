@@ -57,15 +57,19 @@ const Search = () => {
     console.log(isDragActive);
 
     return (
-        <div className={s.searchWrapper} {...getRootProps()}>
+        <div className={s.searchContainer}>
+            <div className={s.searchWrapper} {...getRootProps()}>
+                <img src="./drag_icon.svg" alt="" />
+                Drag and Drop a music !
+            {isDragActive && <input className={s.inputDropZone} {...getInputProps} />}
+            </div>
             <input 
                 type="text" 
                 value={artist}
                 onChange={(e) => setArtist(e.target.value)} 
                 onKeyDown={onKeyDown}
+                placeholder="Search"
             />
-
-           {isDragActive && <input className={s.inputDropZone} {...getInputProps} />}
         </div>
     )
 }

@@ -15,10 +15,16 @@ const Song = ({data}) => {
             className={s.song} 
             onClick={pickSong}
         >
-            <img src={data.album.cover_small} alt="" />
-            <span className={s.title}>
-                {data.title}
-            </span>
+            <img src={data.album.cover_medium} alt="" />
+            <div className={s.infoSong}>
+                <span className={s.title}>
+                    {data.title}
+                </span>
+                <span>
+                    {data.artist.name}
+                </span>
+            </div>
+
         </div>
     )
 }
