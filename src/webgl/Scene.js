@@ -24,7 +24,7 @@ class SCENE {
     this.setupScene();
     this.setupCamera();
     this.setupControls();
-    this.setupStats();
+    // this.setupStats();
     this.setupRenderer();
     this.setupPostProcessing();
     this.setupGLTFLoader();
@@ -47,10 +47,10 @@ class SCENE {
     this.scene = new THREE.Scene();
   }
 
-  setupStats(){
-    this.stats = new Stats();
-    document.body.appendChild(this.stats.dom);
-  }
+  // setupStats(){
+  //   this.stats = new Stats();
+  //   document.body.appendChild(this.stats.dom);
+  // }
 
   setupCamera() {
     this.camera = new THREE.PerspectiveCamera(
@@ -217,13 +217,13 @@ class SCENE {
   }
 
   tick = (time, deltaTime, frame) => {
-    this.stats.begin();
+    // this.stats.begin();
 
     this.selectedObject.tick(deltaTime)
 
     this.composer.render()
 
-    this.stats.end()
+    // this.stats.end()
   };
 }
 
