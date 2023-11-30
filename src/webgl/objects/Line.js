@@ -21,7 +21,7 @@ export default class Line {
         this.materials.push(material)
     })
 
-    console.log(this.materials);
+    // console.log(this.materials);
 
     // this.mesh = new THREE.Mesh(this.geometry, this.material);
 

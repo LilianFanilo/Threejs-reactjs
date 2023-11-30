@@ -1,11 +1,38 @@
 .searchWrapper {
-    input {
-        position: fixed;
-        bottom: 10%;
-        left: 0;
-        right: 0;
-        margin: auto;
-        width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    height: 45px;
+    padding: 0 15px;
+    column-gap: 10px;
 
+    img {
+        width: 30px;
+        aspect-ratio: 1;
     }
+
+}
+
+input {
+    width: 350px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: white;
+
+    &::placeholder {
+        font-family: 'Tilt Neon', sans-serif;
+    }
+}
+
+.searchContainer {
+    display: flex;
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
 }

@@ -12,6 +12,7 @@ const Picker = () => {
             <div onClick={() => pickVisualizer(1)}>Line</div>
             <div onClick={() => pickVisualizer(2)}>Logo Iut</div>
             <div onClick={() => pickVisualizer(3)}>Board</div>
+            <div onClick={() => pickVisualizer(4)}>Cover</div>
         </div>
     )
 }

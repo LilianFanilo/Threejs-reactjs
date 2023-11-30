@@ -13,6 +13,7 @@ import LogoIUT from "./objects/LogoIUT";
 
 import pane from "../utils/Pane";
 import Board from "./objects/Board";
+import Cover from "./objects/Cover";
 
 class SCENE {
   setup(canvas) {
@@ -23,10 +24,11 @@ class SCENE {
     this.setupScene();
     this.setupCamera();
     this.setupControls();
-    this.setupStats();
+    // this.setupStats();
     this.setupRenderer();
     this.setupPostProcessing();
     this.setupGLTFLoader();
+    this.setupTextureLoader();
 
     this.addObjects();
     this.addEvents();
@@ -36,14 +38,19 @@ class SCENE {
     this.gltfLoader = new GLTFLoader()
   }
 
+  
+  setupTextureLoader() {
+    this.textureLoader = new THREE.TextureLoader()
+  }
+
   setupScene() {
     this.scene = new THREE.Scene();
   }
 
-  setupStats(){
-    this.stats = new Stats();
-    document.body.appendChild(this.stats.dom);
-  }
+  // setupStats(){
+  //   this.stats = new Stats();
+  //   document.body.appendChild(this.stats.dom);
+  // }
 
   setupCamera() {
     this.camera = new THREE.PerspectiveCamera(
@@ -106,7 +113,7 @@ class SCENE {
       max: 5,
       step: 0.01,
     }).on('change', (e) => {
-      console.log(e.value)
+      // console.log(e.value)
       this.bloomPass.strength = e.value;
     })
 
@@ -116,7 +123,7 @@ class SCENE {
       max: 10,
       step: 0.01,
     }).on('change', (e) => {
-      console.log(e.value)
+      // console.log(e.value)
       this.bloomPass.radius = e.value;
     })
 
@@ -126,7 +133,7 @@ class SCENE {
       max: 1,
       step: 0.1,
     }).on('change', (e) => {
-      console.log(e.value)
+      // console.log(e.value)
       this.bloomPass.threshold = e.value;
     })
   }
@@ -156,6 +163,7 @@ class SCENE {
     this.line = new Line();
     this.logoIUT = new LogoIUT()
     this.board = new Board()
+    this.cover = new Cover()
 
     // this.scene.add(this.line.group);
 
@@ -194,6 +202,12 @@ class SCENE {
         this.camera.position.z = 100;
         this.bloomPass.strength = 0.35;
         break;
+
+      case 4 :
+        this.selectedObject = this.cover;
+        this.camera.position.z = 100;
+        this.bloomPass.strength = 0;
+        break;
     
       default:
         break;
@@ -203,13 +217,13 @@ class SCENE {
   }
 
   tick = (time, deltaTime, frame) => {
-    this.stats.begin();
+    // this.stats.begin();
 
     this.selectedObject.tick(deltaTime)
 
     this.composer.render()
 
-    this.stats.end()
+    // this.stats.end()
   };
 }
 
